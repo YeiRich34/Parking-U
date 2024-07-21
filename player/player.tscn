@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://boi8kulm22ofw"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_gm5u7"]
+[ext_resource type="Texture2D" uid="uid://cpin62lc8pc1m" path="res://player/Lambo Car.png" id="1_w0e6t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jm8xg"]
+radius = 19.0
+height = 96.0
+
+[node name="Player" type="CharacterBody2D" groups=["vehi"]]
+position = Vector2(66, 114)
+collision_mask = 4
+input_pickable = true
+script = ExtResource("1_gm5u7")
+
+[node name="VehicleSprite" type="Sprite2D" parent="."]
+position = Vector2(0.175049, 10.325)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_w0e6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.174911, 8.32509)
+shape = SubResource("CapsuleShape2D_jm8xg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(1.5, 1.5)
